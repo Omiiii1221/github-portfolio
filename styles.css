@@ -1,0 +1,491 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Body and container */
+body {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.6;
+  padding-top: 80px; /* To prevent the navbar from covering the top part of the page */
+  transition: background 0.5s ease-in-out;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+/* Navbar */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.5);  /* Set the navbar background to transparent */
+  padding: 0 0;  /* Remove any extra padding */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100px;  /* Set fixed height to 70px */
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Subtle shadow to maintain visibility */
+  transition: top 0.3s ease-in-out, background-color 0.3s ease;
+  display: flex;
+  align-items: center;  /* Vertically center the contents */
+}
+
+/* Navbar container */
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center items vertically */
+  width: 100%;
+  padding: 0 20px;  /* Adjusted for left and right padding */
+}
+
+/* Logo styling */
+.navbar .logo {
+  font-size: 20px;  /* Reduced font size to fit within 70px height */
+  font-weight: bold;
+  color: #fff;  /* Keep logo white for contrast */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+/* Navigation links styling */
+.navbar nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar nav ul li {
+  margin-right: 20px;  /* Reduced space between items */
+}
+
+.navbar nav ul li a {
+  text-decoration: none;
+  color: #fff;  /* Keep links white for contrast */
+  font-size: 16px;  /* Adjusted font size */
+  padding: 8px 10px;  /* Reduced padding to make it fit within 70px height */
+  border-radius: 25px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for links */
+.navbar nav ul li a:hover {
+  background-color: #00c6ff;
+  transform: scale(1.05); /* Slightly smaller scale for better fitting */
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .navbar .container {
+    flex-direction: row;  /* Keep elements in a row */
+    justify-content: space-between;  /* Ensure space between logo and nav items */
+    align-items: center;  /* Vertically center the items */
+    padding: 0 10px;
+  }
+
+  .navbar nav ul {
+    display: flex;
+    list-style: none;
+    width: auto;
+    flex-direction: row;  /* Keep nav items in a row */
+    margin-top: 0;
+    padding: 0;
+  }
+
+  .navbar nav ul li {
+    margin-right: 15px;  /* Add space between list items */
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  .navbar .logo {
+    margin-left: auto;  /* Push the logo to the right */
+    margin-bottom: 0;
+  }
+}
+
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 0 50px 0;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.hero-text {
+  max-width: 50%;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.hero-text h1 {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.hero-text .tagline {
+  font-size: 22px;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.hero-text .btn {
+  background-color: #297ecd;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-text .btn:hover {
+  background-color: #053065;
+  transform: translateY(-5px); /* Add a slight lift effect on hover */
+}
+
+.hero-image img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hero-image img:hover {
+  transform: scale(1.1); 
+}
+
+/* Mobile responsive adjustments for Hero section */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column; /* Stack elements vertically */
+    padding: 50px 20px 30px 20px; /* Adjust padding for smaller screens */
+    text-align: center; /* Center align text and content */
+  }
+
+  .hero-text {
+    max-width: 100%; /* Allow the text to take full width on mobile */
+    margin-bottom: 20px; /* Add margin between text and image */
+  }
+
+  .hero-text .btn {
+    padding: 10px 20px; /* Reduce padding to make button smaller */
+    font-size: 16px; /* Reduce font size */
+    margin-top: 10px; /* Add some space above the button */
+  }
+
+  .hero-image {
+    margin-top: 20px; /* Add margin to separate the image from text */
+  }
+
+  .hero-image img {
+    width: 150px; /* Reduce image size */
+    height: 150px; /* Maintain proportional size */
+  }
+
+  .hero-text h1 {
+    font-size: 36px; /* Adjust heading size for smaller screens */
+  }
+
+  .hero-text .tagline {
+    font-size: 18px; /* Adjust tagline font size */
+  }
+}
+
+
+/* About Section */
+.about {
+  background-color: rgba(0, 0, 0, 0.6);  /* Darker background for a more professional look */
+  padding: 60px 30px;
+  border-radius: 20px;
+  margin-top: 80px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 2s ease-out;
+  color: #fff;  /* White text for contrast */
+}
+
+.about h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;  /* Making the heading more prominent */
+}
+
+.about p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.skills li {
+  background: #00c6ff;
+  padding: 12px 25px;
+  margin-right: 20px;
+  margin-bottom: 15px;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+  text-transform: capitalize;  /* Capitalize skill names for a cleaner look */
+}
+
+.skills li:hover {
+  transform: scale(1.1); /* Hover effect for skills items */
+}
+
+strong {
+  font-weight: 700;
+  font-size: 20px;
+  color: #00c6ff;  /* Highlight the languages section */
+}
+
+.about p:last-child {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Projects Section */
+.projects {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 60px 0;
+  border-radius: 20px;
+  margin-top: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.projects h2, .projects h3 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+/* Updated Project Grid */
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.project {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 30%;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.project h4 {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.project p {
+  font-size: 14px;
+  color: #666;
+}
+
+.project:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.project:hover h4 {
+  color: #00c6ff; /* Change project title color on hover */
+}
+
+/* Contact Section */
+.contact {
+  padding: 60px 30px;
+  background: rgba(0, 0, 0, 0.7);  /* Darker background for contrast */
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-bottom: 50px;  /* Added margin-bottom for space between contact section and footer */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  color: #fff;  /* White text for readability */
+}
+
+.contact h2 {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.contact p {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.contact-links p {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.contact-icon {
+  text-decoration: none;
+  color: #00c6ff;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-icon i {
+  margin-right: 10px;
+  font-size: 24px; /* Size of the icon */
+}
+
+.contact-icon:hover {
+  color: #fff;  /* White color on hover for contrast */
+  transform: scale(1.1);  /* Slight zoom effect on hover */
+}
+
+.contact .contact-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* Footer */
+.footer {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  margin-top: 0; /* Ensure no margin pushing footer down */
+}
+
+.footer p {
+  margin: 0;
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 40px;
+  }
+
+  .hero-image {
+    margin-top: 20px;
+  }
+
+  .project-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project {
+    width: 80%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero-text .tagline {
+    font-size: 18px;
+  }
+
+  .navbar nav ul li a {
+    font-size: 16px;
+  }
+
+  .skills li {
+    font-size: 16px;
+  }
+
+  .contact p {
+    font-size: 18px;
+  }
+}
