@@ -21,7 +21,7 @@ body {
 /* Neon glowing animation */
 @keyframes gradient-animation {
   0% {
-    background-position: 0% 50%;
+    background-position: 0% 60%;
   }
   50% {
     background-position: 100% 50%;
@@ -291,6 +291,7 @@ body {
   text-align: center;
 }
 
+/* Skills Section */
 .skills {
   display: flex;
   flex-wrap: wrap;
@@ -312,20 +313,54 @@ body {
   gap: 10px; /* Space between logo and text */
 }
 
-.skills li img {
+.skills li img,
+.skills li i {
   width: 25px; /* Adjust logo size */
   height: 25px;
-  border-radius: 50%; /* Optionally make logos round */
 }
 
 .skills li:hover {
-  transform: scale(1.1);
+  transform: scale(1.1); /* Hover effect */
+}
+
+.skills li i {
+  font-size: 22px; /* FontAwesome icon size */
+}
+
+.skills li img {
+  border-radius: 50%; /* Optionally make logos round */
+}
+
+/* Languages Section */
+.languages {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.languages li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+}
+
+.languages li i {
+  font-size: 22px; /* Icon size */
+  color: white; /* Icon color */
+}
+
+.languages li:hover {
+  transform: scale(1.1); 
 }
 
 strong {
   font-weight: 700;
   font-size: 20px;
-  color: #00c6ff;
+  color: #00c6ff;  /* Highlight the languages section */
 }
 
 .about p:last-child {
@@ -334,7 +369,6 @@ strong {
   font-weight: 600;
   margin-top: 20px;
 }
-
 
 @keyframes fadeIn {
   0% {
