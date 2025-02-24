@@ -412,12 +412,12 @@ strong {
 }
 
 .certificate {
+  flex: 1 1 calc(10% - 10px); /* Adjust the width as needed */
+  box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0.8);
-  width: calc(33.33% - 20px);
   border-radius: 15px;
-  padding: 25px;
+  padding: 20px;
   text-align: center;
-  margin-bottom: 30px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
@@ -438,11 +438,24 @@ strong {
 .certificate p {
   font-size: 14px;
   color: #ccc;
+  margin-top: 5px;
 }
 
 .certificate:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .certificate {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .certificate {
+    width: 100%;
+  }
 }
 
 .modal {
@@ -493,8 +506,11 @@ strong {
   }
 }
 
-
-
+.internship-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
 /* Projects Section */
 .projects {
